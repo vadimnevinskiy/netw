@@ -17,9 +17,6 @@ function App() {
               <Route path='/profile' render={() => <Profile />} />
               <Route path='/users' render={() => <Users />} />
               <Route path='/dialogs' render={() => <Dialogs />} />
-
-
-
           </div>
       </div>
       <Footer />

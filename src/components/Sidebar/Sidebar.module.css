@@ -10,28 +10,31 @@
     font-weight: bold;
     font-size: 18px;
     border-radius: 5px;
-    background:  #ffffff;
-    color: #303030;
     opacity: 1;
     transition: all 0.2s;
     border: 1px solid #5b5b5b;
-}
-.nav a.active {
     background: #5b5b5b;
     color: #ffffff;
+}
+.nav a.active {
+    background:  #ffffff;
+    color: #424242;
     opacity: 1;
     box-shadow: 0px 0px 5px #000000;
     border: 1px solid  #ffffff;
 }
 .nav a:hover{
-    background: #747474;
-    color: #ffffff;
+    background: #757575;
+    /*color: #303030;*/
+    box-shadow: 0px 0px 3px #000000;
     opacity: 1;
 }
 .nav a.active:hover{
-    background: #5b5b5b;
+    background: #ffffff;
+    color: #303030;
     opacity: 1;
     cursor: auto;
+    box-shadow: 0px 0px 5px #000000;
 }
 .nav a .navIcon{
     vertical-align: -5px;
