@@ -1,13 +1,23 @@
 import React from 'react';
 import classes from "./Sidebar.module.css";
+import {NavLink} from "react-router-dom";
 
 const Sidebar = () => {
     return (
         <div className={classes.sidebar}>
             <nav className={classes.nav}>
-                <a href="#"><span className={classes.navIcon + ' ' + "material-icons"}>person_outline</span>Profile</a>
-                <a href="#" className={classes.active}><span className={classes.navIcon + ' ' + "material-icons"}>people_outline</span>Users</a>
-                <a href="#"><span className={classes.navIcon + ' ' + "material-icons"}>mail</span>dialogs</a>
+                <NavLink to={'/profile'} activeClassName={classes.active}>
+                    <span className={classes.navIcon + ' ' + "material-icons"}>person_outline</span>
+                    Profile
+                </NavLink>
+                <NavLink to={'/users'} activeClassName={classes.active}>
+                    <span className={classes.navIcon + ' ' + "material-icons"}>people_outline</span>
+                    Users
+                </NavLink>
+                <NavLink to={'/dialogs'} activeClassName={classes.active}>
+                    <span className={classes.navIcon + ' ' + "material-icons"}>mail</span>
+                    Dialogs
+                </NavLink>
             </nav>
         </div>
     )
