@@ -1,3 +1,68 @@
 .profile{
-
+    min-width: 400px;
+    padding-top: 50px;
 }
+.userPhoto{
+    width: 200px;
+    margin: 0px auto 30px;
+    text-align: center;
+    position: relative;
+}
+.userPhoto .photo{
+    border: 1px solid #303030;
+    width: 200px;
+    height: 200px;
+    margin: 0px auto;
+    border-radius: 50%;
+    background: #757575;
+}
+.userPhoto img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+.userName{
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Tahoma';
+    margin-bottom: 10px;
+}
+.info{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+.workStatus{
+    min-width: 190px;
+    position: absolute;
+    left: 200px;
+    top: 50px;
+    background: rgba(174, 5, 17, 0.2);
+    border: 1px solid rgba(132, 6, 15, 0.7);
+    padding: 7px 10px 10px 10px;
+    border-radius: 20px;
+    color: #000000;
+}
+.redStatus{
+    background: rgba(174, 5, 17, 0.2);
+    border: 1px solid rgba(132, 6, 15, 0.7);
+}
+.greenStatus{
+    background: rgba(5,174, 25, 0.2);
+    border: 1px solid rgba(3, 106, 15, 0.7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,82 @@
+
+.statusBlock{
+    min-width: 200px;
+    position: absolute;
+    right: 180px;
+    top: 0px;
+    background: rgba(19, 29, 164, 0.5);
+    border: 1px solid rgba(6, 15, 132, 0.7);
+    padding: 7px 10px 10px 10px;
+    border-radius: 20px;
+    color: #ffffff;
+}
+.status{
+
+}
+.form{
+    display: grid;
+    grid-template-areas: "field button";
+    grid-template-columns: 1fr 30px;
+}
+.statusField{
+    grid-area: field;
+}
+.statusButton{
+    grid-area: button;
+    background: green;
+}
+.statusButton button{
+    border: none;
+    width: 30px;
+    height: 30px;
+    margin: 0px;
+    display: block;
+    padding: 0px;
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    border-left: none;
+}
+.statusButton button span{
+    background: #ffffff;
+    transition: all 0.2s;
+}
+.statusButton button:hover span{
+    background: #cccccc;
+}
+.statusButton span{
+    display: inline-block;
+    width: 30px;
+    height: 28px;
+    margin: 0px;
+    cursor: pointer;
+    vertical-align: -7px;
+    line-height: 28px;
+}
+.statusField input{
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    border-right: none;
+    height: 28px;
+    padding: 0px 5px;
+    outline: none;
+}
+.editIcon, .closeIcon{
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    font-size: 20px;
+    padding: 5px;
+    background: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #cccccc;
+    transition: all 0.2s;
+    color: #5b5b5b;
+    opacity: 0.8;
+}
+.editIcon:hover, .closeIcon:hover{
+    background: #cccccc;
+    opacity: 1;
+}
+
+

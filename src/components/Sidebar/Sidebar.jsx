@@ -1,23 +1,20 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import classes from "./Sidebar.module.css";
 import {NavLink} from "react-router-dom";
 
-const Sidebar = () => {
+const Sidebar = (props) => {
+    let menu = props.menu.map(item => {
+        return (
+            <NavLink to={item.link} activeClassName={classes.active} key={item.id}>
+                <span className={classes.navIcon + ' ' + "material-icons"}>{item.icon}</span>
+                {item.title}
+            </NavLink>
+        )
+    })
     return (
         <div className={classes.sidebar}>
             <nav className={classes.nav}>
-                <NavLink to={'/profile'} activeClassName={classes.active}>
-                    <span className={classes.navIcon + ' ' + "material-icons"}>face</span>
-                    Profile
-                </NavLink>
-                <NavLink to={'/users'} activeClassName={classes.active}>
-                    <span className={classes.navIcon + ' ' + "material-icons"}>supervisor_account</span>
-                    Users
-                </NavLink>
-                <NavLink to={'/dialogs'} activeClassName={classes.active}>
-                    <span className={classes.navIcon + ' ' + "material-icons"}>textsms</span>
-                    Dialogs
-                </NavLink>
+                {menu}
             </nav>
         </div>
     )
