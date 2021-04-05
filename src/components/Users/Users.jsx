@@ -2,10 +2,10 @@ import React from 'react';
 import classes from './Users.module.css';
 import avatar from '../../assets/img/avatar.png'
 import {NavLink} from "react-router-dom";
+import {followUser} from "../../redux/users-reducer";
 
 
 const Users = (props) => {
-
     let pages = [];
     let current = props.currentPage;
     let pageCount = Math.ceil(props.totalCount / props.usersCountPerPage);
@@ -15,8 +15,6 @@ const Users = (props) => {
             pages.push(i);
         }
     }
-
-
 
 
     let page = pages.map(p => {
@@ -36,10 +34,14 @@ const Users = (props) => {
 
     })
 
+    const follow = (userId) => {
+        props.followUser(userId);
+    }
+
     let user = props.users.map(item => {
         return (
-            <NavLink to={'/profile/' + item.id} key={item.id}  className={classes.userItemLink}>
-                <div className={classes.userItem}>
+            <div className={classes.userItem} key={item.id}>
+                <NavLink to={'/profile/' + item.id} className={classes.userItemLink}>
                     <div className={classes.userPhoto}>
                         {
                             item.photos.small
@@ -53,8 +55,19 @@ const Users = (props) => {
                             {item.name}
                         </div>
                     </div>
-                </div>
-            </NavLink>
+                </NavLink>
+                {
+                    props.isAuth &&
+                    <div className={classes.userAddBtn}>
+                        {
+                            item.followed
+                                ? <span className={classes.removeUser + ' ' + 'material-icons'}>clear</span>
+                                : <span className={classes.addUser + ' ' + 'material-icons'} onClick={() => {props.followUser(item.id)}}>add</span>
+                        }
+                    </div>
+                }
+            </div>
+
         )
     })
     return (

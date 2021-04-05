@@ -6,7 +6,7 @@ import {Field, Form} from "react-final-form";
 const Status = (props) => {
 
     let [editMode, setEditMode] = useState(false);
-    let [status, setStatus] = useState(props.status)
+    // let [status, setStatus] = useState(props.status)
 
     let activateEditMode = () => {
         setEditMode(true);
@@ -16,7 +16,6 @@ const Status = (props) => {
     }
 
     const onSubmit = values => {
-        // window.alert(JSON.stringify(values, 0, 2))
         props.updateStatus(values.status);
         setEditMode(false);
     }

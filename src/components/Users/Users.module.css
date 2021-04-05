@@ -51,6 +51,43 @@
     background: #323bb3;
     color: white;
 }
+.userItem{
+    position: relative;
+    z-index: 90;
+}
+.userName{
+    width: 166px;
+    overflow-x: hidden;
+    white-space: nowrap;
+}
+
+
+.userAddBtn{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 100;
+}
+.addUser, .removeUser{
+    background: #323bb3;
+    padding: 5px 5px 5px 5px;
+    border-radius: 50%;
+    transition: all 0.2s;
+    cursor: pointer;
+    color: #ffffff;
+    opacity: 0.3;
+}
+.removeUser{
+    background: #990000;
+}
+.addUser:hover, .removeUser:hover{
+    border-radius: 50%;
+    opacity: 1;
+}
+.addUser:hover, .removeUser:hover{
+    color: #ffffff;
+}
+
 
 .paginator{
 

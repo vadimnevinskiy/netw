@@ -2,7 +2,7 @@ import React from "react";
 import Users from "./Users";
 import {compose} from "redux";
 import {connect} from "react-redux";
-import {requestUsers} from "../../redux/users-reducer";
+import {followUser, requestUsers} from "../../redux/users-reducer";
 import {
     getCurrentPage,
     getIsFetching,
@@ -36,6 +36,8 @@ class UsersContainer extends React.Component {
                         : <Users
                             {...this.props}
                             onPageChanged={this.onPageChanged}
+                            isAuth={this.props.isAuth}
+                            followUser={this.props.followUser}
                         />
                 }
             </>
@@ -49,12 +51,14 @@ let mapStateToProps = (state) => {
         totalCount: getTotalUsersCount(state),
         usersCountPerPage: getUsersCountPerPage(state),
         currentPage: getCurrentPage(state),
-        isFetching: getIsFetching(state)
+        isFetching: getIsFetching(state),
+        isAuth: state.auth.isAuth
     }
 }
 
 export default compose(
     connect(mapStateToProps, {
-        requestUsers: requestUsers
+        requestUsers: requestUsers,
+        followUser: followUser
     })
 )(UsersContainer);

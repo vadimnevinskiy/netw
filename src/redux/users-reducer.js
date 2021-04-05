@@ -4,7 +4,8 @@ const SET_USERS = 'SET_USERS';
 const SET_TOTAL_COUNT = 'SET_TOTAL_COUNT';
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 const SET_IS_FETCHING = 'SET_IS_FETCHING';
-
+const FOLLOW = 'FOLLOW';
+const UNFOLLOW = 'UNFOLLOW';
 
 let initialState = {
     users: [],
@@ -36,6 +37,26 @@ const userReducer = (state = initialState, action) => {
                 ...state,
                 isFetching: action.isFetching
             }
+        case FOLLOW:
+            return {
+                ...state,
+                users: state.users.map(u => {
+                    if (u.id === action.userId) {
+                        return {...u, followed: true}
+                    }
+                    return u;
+                })
+            }
+        case UNFOLLOW:
+            return {
+                ...state,
+                users: state.users.map(u => {
+                    if (u.id === action.userId) {
+                        return {...u, followed: false}
+                    }
+                    return u;
+                })
+            }
         default:
             return state;
     }
@@ -66,6 +87,18 @@ const setCurrentPage = (currentPage) => {
     }
 }
 
+const setFollowUser = (userId) => {
+    return {
+        type: FOLLOW,
+        userId: userId
+    }
+}
+const setUnfollowUser = (userId) => {
+    return {
+        type: UNFOLLOW,
+        userId: userId
+    }
+}
 
 export const requestUsers = (pageNum, count) => (dispatch) => {
     dispatch(setIsFetching(true));
@@ -77,4 +110,23 @@ export const requestUsers = (pageNum, count) => (dispatch) => {
             dispatch(setTotalCount(data.totalCount));
         })
 }
+
+
+export const followUser = (userId) => (dispatch) => {
+    userAPI.follow(userId)
+        .then(data => {
+            if(data.resultCode === 0) {
+                dispatch(setFollowUser(userId))
+            }
+        })
+}
+export const unfollowUser = (userId) => (dispatch) => {
+    userAPI.unfollow(userId)
+        .then(data => {
+            if(data.resultCode === 0) {
+                dispatch(setUnfollowUser(userId))
+            }
+        })
+}
+
 export default userReducer;
