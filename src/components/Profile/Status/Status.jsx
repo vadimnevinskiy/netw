@@ -4,8 +4,9 @@ import {Field, Form} from "react-final-form";
 
 
 const Status = (props) => {
-    let [editMode, setEditMode] = useState(false);
 
+    let [editMode, setEditMode] = useState(false);
+    let [status, setStatus] = useState(props.status)
 
     let activateEditMode = () => {
         setEditMode(true);
@@ -13,8 +14,11 @@ const Status = (props) => {
     let deactivateEditMode = () => {
         setEditMode(false);
     }
+
     const onSubmit = values => {
-        window.alert(JSON.stringify(values, 0, 2))
+        // window.alert(JSON.stringify(values, 0, 2))
+        props.updateStatus(values.status);
+        setEditMode(false);
     }
 
 
@@ -23,15 +27,19 @@ const Status = (props) => {
             {
                 !editMode
                     ? <div className={classes.status}>
-                        Не плохой человек! Не плохой человек! Не плохой человек!
-                        <span
-                            className={classes.editIcon + ' ' + "material-icons"}
-                            onClick={activateEditMode}
-                        >edit</span>
+                        {props.status}
+                        {
+                            props.myId === props.userId &&
+                            <span
+                                className={classes.editIcon + ' ' + "material-icons"}
+                                onClick={activateEditMode}
+                            >edit</span>
+                        }
                     </div>
                     : <div className={classes.statusForm}>
                         <Form
                             onSubmit={onSubmit}
+                            initialValues={{status: props.status}}
                             render={({handleSubmit, form, submitting, pristine, values}) => (
                                 <form onSubmit={handleSubmit}>
                                     <div className={classes.form}>
@@ -41,6 +49,7 @@ const Status = (props) => {
                                                 component="input"
                                                 type="text"
                                                 placeholder="Status"
+                                                autoComplete="off"
                                             />
                                         </div>
                                         <div className={classes.statusButton}>

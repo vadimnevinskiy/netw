@@ -7,8 +7,6 @@ import Contacts from "./Contacts/Contacts";
 
 
 const Profile = (props) => {
-
-
     return (
         <div className={classes.profile}>
             <div className={classes.userPhoto}>
@@ -20,7 +18,7 @@ const Profile = (props) => {
                     }
 
                 </div>
-                <Status/>
+                <Status myId={props.myId} userId={props.profile.userId} status={props.status} updateStatus={props.updateStatus}/>
                 {
                     props.profile.lookingForAJob
                         ? <div className={classes.workStatus + ' ' + classes.greenStatus}>

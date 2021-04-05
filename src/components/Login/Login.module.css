@@ -14,13 +14,13 @@
 }
 
 
-form .formField div {
+.loginForm .formField div {
     display: flex;
     flex-flow: row nowrap;
     line-height: 2em;
 }
 
-form label {
+.loginForm label {
     color: #333;
     width: 110px;
     font-size: 1em;
@@ -28,7 +28,7 @@ form label {
     display: block;
 }
 
-form input[type="text"], form input[type="password"]{
+.loginForm input[type="text"], form input[type="password"]{
     flex: 1;
     padding: 3px 5px;
     font-size: 1em;
@@ -39,7 +39,7 @@ form input[type="text"], form input[type="password"]{
     outline: none;
 }
 
-form input[type='checkbox'] {
+.loginForm input[type='checkbox'] {
     margin-left: 0px;
 }
 .loginCheckbox{
@@ -48,14 +48,14 @@ form input[type='checkbox'] {
 
 
 
-form span {
+.loginForm span {
     line-height: 32px;
     margin-left: 10px;
     color: #800;
     font-weight: bold;
 }
 
-form .buttons {
+.loginForm .buttons {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;

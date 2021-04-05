@@ -28,7 +28,7 @@ const Login = (props) => {
                     return errors
                 }}
                 render={({handleSubmit}) => (
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit} className={classes.loginForm}>
                         <div className={classes.formField}>
                             <Field name="email">
                                 {({input, meta}) => (

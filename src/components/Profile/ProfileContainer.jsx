@@ -2,7 +2,7 @@ import React from "react";
 import Profile from "./Profile";
 import {compose} from "redux";
 import {connect} from "react-redux";
-import {getProfile} from "../../redux/profile-reducer";
+import {getProfile, getStatus, updateStatus} from "../../redux/profile-reducer";
 import Preloader from "../common/Preloader";
 import {withRouter} from "react-router-dom";
 
@@ -12,7 +12,8 @@ class ProfileContainer extends React.Component {
         if(!userId){
             userId = 15557;
         }
-        this.props.getProfile(userId)
+        this.props.getProfile(userId);
+        this.props.getStatus(userId);
     }
 
     render() {
@@ -20,7 +21,7 @@ class ProfileContainer extends React.Component {
             return <Preloader/>
         } else {
             return (
-                <Profile profile={this.props.profile} />
+                <Profile myId={this.props.myId} profile={this.props.profile} status={this.props.status} updateStatus={this.props.updateStatus} />
             );
         }
     }
@@ -28,13 +29,17 @@ class ProfileContainer extends React.Component {
 
 let mapStateToProps = (state) => {
     return {
-        profile: state.profilePage.profile
+        profile: state.profilePage.profile,
+        status: state.profilePage.status,
+        myId: state.auth.userId
     }
 }
 
 export default compose(
     connect(mapStateToProps, {
-        getProfile: getProfile
+        getProfile: getProfile,
+        getStatus: getStatus,
+        updateStatus: updateStatus
     }),
     withRouter
 )(ProfileContainer)

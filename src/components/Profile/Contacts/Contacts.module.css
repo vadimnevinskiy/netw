@@ -8,3 +8,8 @@
     width: 25px;
     height: 25px;
 }
+.contacts .disabled{
+    margin: 0px 10px 0px 0px;
+    cursor: auto;
+    opacity: 0.1;
+}
