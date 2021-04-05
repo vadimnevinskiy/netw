@@ -13,3 +13,17 @@
 //max-width: 1000px;
 //margin: 0px auto;
 }
+.loginLink{
+    text-decoration: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+.loginLink:hover{
+    text-decoration: none;
+}
+.loginIcon{
+    color: #ffffff;
+    vertical-align: -8px;
+    margin: 0px 10px;
+    cursor: pointer;
+}

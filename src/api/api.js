@@ -31,3 +31,17 @@ export const profileAPI = {
     }
 }
 
+export const authAPI = {
+    authMe() {
+        return instance.get(`auth/me`)
+            .then(response => {
+                return response.data
+            })
+    },
+    login(email, password, rememberMe= false, captcha= false) {
+        return instance.post(`/auth/login`, {email, password, rememberMe, captcha})
+    },
+    logout() {
+        return instance.delete(`/auth/login`)
+    }
+}

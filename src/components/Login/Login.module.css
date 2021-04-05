@@ -1,0 +1,66 @@
+.Login {
+    width: 450px;
+    margin: 0px auto;
+    border: 1px solid #cccccc;
+    padding: 0px 20px 20px 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+}
+
+.Login h1 {
+    margin: 0px 0px 20px 0px;
+    padding: 0px;
+    text-align: center;
+}
+
+
+form .formField div {
+    display: flex;
+    flex-flow: row nowrap;
+    line-height: 2em;
+}
+
+form label {
+    color: #333;
+    width: 110px;
+    font-size: 1em;
+    line-height: 32px;
+    display: block;
+}
+
+form input[type="text"], form input[type="password"]{
+    flex: 1;
+    padding: 3px 5px;
+    font-size: 1em;
+    margin-left: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-right: 3px;
+    outline: none;
+}
+
+form input[type='checkbox'] {
+    margin-left: 0px;
+}
+.loginCheckbox{
+    margin-left: 125px;
+}
+
+
+
+form span {
+    line-height: 32px;
+    margin-left: 10px;
+    color: #800;
+    font-weight: bold;
+}
+
+form .buttons {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin-top: 15px;
+}
+.formField{
+    margin-bottom: 10px;
+}

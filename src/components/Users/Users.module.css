@@ -16,6 +16,11 @@
     cursor: pointer;
     min-width: 170px;
     /*max-width: 200px;*/
+
+}
+.userItemLink{
+    text-decoration: none;
+    color: #000000;
 }
 
 .userPhoto{
@@ -61,6 +66,16 @@
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.2s;
+}
+.paginator span.dots{
+    background: none;
+    margin: 0px 5px 5px 0px;
+    width: 80px;
+    color: black;
+    cursor: auto;
+}
+.paginator span.dots:hover{
+    background: none;
 }
 .paginator span:hover{
     background: #404ad0;
