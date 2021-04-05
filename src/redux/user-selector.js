@@ -17,3 +17,6 @@ export const getUsersCountPerPage = (state) => {
 export const getCurrentPage = (state) => {
     return state.userPage.currentPage;
 }
+export const getAuth = (state) => {
+    return state.auth.isAuth;
+}

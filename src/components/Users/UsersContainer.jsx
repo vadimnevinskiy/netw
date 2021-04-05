@@ -4,6 +4,7 @@ import {compose} from "redux";
 import {connect} from "react-redux";
 import {followUser, requestUsers} from "../../redux/users-reducer";
 import {
+    getAuth,
     getCurrentPage,
     getIsFetching,
     getTotalUsersCount,
@@ -52,7 +53,7 @@ let mapStateToProps = (state) => {
         usersCountPerPage: getUsersCountPerPage(state),
         currentPage: getCurrentPage(state),
         isFetching: getIsFetching(state),
-        isAuth: state.auth.isAuth
+        isAuth: getAuth(state)
     }
 }
 
