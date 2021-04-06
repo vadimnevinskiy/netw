@@ -1,3 +1,29 @@
 .dialogs{
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    grid-gap: 10px;
+}
+.usersList a{
+    text-decoration: none;
+    color: #ffffff;
+}
+.userItem{
+    display: block;
+    background: #757575;
+    padding: 5px 5px 7px 10px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+}
+.active .userItem{
+    background: #323bb3;
+    box-shadow: 0px 0px 3px #323bb3;
+}
 
+
+.messageItem{
+    border: 1px solid #404ad0;
+    margin-bottom: 10px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px;
+    background: rgba(7, 15, 175, 0.3);
 }
