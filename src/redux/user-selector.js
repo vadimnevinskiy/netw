@@ -1,22 +1,22 @@
 
 
-export const getUsers = (state) => {
+export const getUsersFromSelector = (state) => {
     return state.userPage.users;
 }
 
-export const getTotalUsersCount = (state) => {
+export const getTotalUsersCountFromSelector = (state) => {
     return state.userPage.totalCount;
 }
 
-export const getIsFetching = (state) => {
+export const getIsFetchingFromSelector = (state) => {
     return state.userPage.isFetching;
 }
-export const getUsersCountPerPage = (state) => {
+export const getUsersCountPerPageFromSelector = (state) => {
     return state.userPage.usersCountPerPage;
 }
-export const getCurrentPage = (state) => {
+export const getCurrentPageFromSelector = (state) => {
     return state.userPage.currentPage;
 }
-export const getAuth = (state) => {
+export const getAuthFromSelector = (state) => {
     return state.auth.isAuth;
 }

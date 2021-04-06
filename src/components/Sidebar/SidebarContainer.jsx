@@ -3,6 +3,7 @@ import Sidebar from "./Sidebar";
 import {compose} from "redux";
 import {connect} from "react-redux";
 import {getMenu} from "../../redux/sidebar-reducer";
+import {getMenuFromSelector} from "../../redux/sidebar-selector";
 
 class SidebarContainer extends React.Component {
     componentDidMount() {
@@ -18,7 +19,7 @@ class SidebarContainer extends React.Component {
 
 let mapStateToProps = (state) => {
     return {
-        menu: state.sidebar.menu
+        menu: getMenuFromSelector(state)
     }
 }
 

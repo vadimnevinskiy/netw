@@ -5,6 +5,11 @@ import {connect} from "react-redux";
 import {getProfile, getStatus, updateStatus} from "../../redux/profile-reducer";
 import Preloader from "../common/Preloader";
 import {withRouter} from "react-router-dom";
+import {
+    getMyIdFromSelector,
+    getProfileFromSelector,
+    getStatusFromSelector
+} from "../../redux/profile-selector";
 
 class ProfileContainer extends React.Component {
     componentDidMount() {
@@ -29,9 +34,9 @@ class ProfileContainer extends React.Component {
 
 let mapStateToProps = (state) => {
     return {
-        profile: state.profilePage.profile,
-        status: state.profilePage.status,
-        myId: state.auth.userId
+        profile: getProfileFromSelector(state),
+        status: getStatusFromSelector(state),
+        myId: getMyIdFromSelector(state)
     }
 }
 

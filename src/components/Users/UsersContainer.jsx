@@ -4,12 +4,12 @@ import {compose} from "redux";
 import {connect} from "react-redux";
 import {followUser, requestUsers} from "../../redux/users-reducer";
 import {
-    getAuth,
-    getCurrentPage,
-    getIsFetching,
-    getTotalUsersCount,
-    getUsers,
-    getUsersCountPerPage
+    getAuthFromSelector,
+    getCurrentPageFromSelector,
+    getIsFetchingFromSelector,
+    getTotalUsersCountFromSelector,
+    getUsersCountPerPageFromSelector,
+    getUsersFromSelector
 } from "../../redux/user-selector";
 import Preloader from "../common/Preloader";
 
@@ -48,12 +48,12 @@ class UsersContainer extends React.Component {
 
 let mapStateToProps = (state) => {
     return {
-        users: getUsers(state),
-        totalCount: getTotalUsersCount(state),
-        usersCountPerPage: getUsersCountPerPage(state),
-        currentPage: getCurrentPage(state),
-        isFetching: getIsFetching(state),
-        isAuth: getAuth(state)
+        users: getUsersFromSelector(state),
+        totalCount: getTotalUsersCountFromSelector(state),
+        usersCountPerPage: getUsersCountPerPageFromSelector(state),
+        currentPage: getCurrentPageFromSelector(state),
+        isFetching: getIsFetchingFromSelector(state),
+        isAuth: getAuthFromSelector(state)
     }
 }
 
